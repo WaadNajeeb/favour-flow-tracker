@@ -2,7 +2,7 @@
   "name": "favour-flow",
   "version": "1.0.2",
   "scripts": {
-    "build": "cd client && npm install --force && ng build --configuration production",
+    "build": "cd client && npm install --force && npm run build -- --configuration production",
     "start": "cd backend && npm install --force && node app.js"
   }
 }
