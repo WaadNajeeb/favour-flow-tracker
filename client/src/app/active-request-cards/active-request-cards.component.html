@@ -1,0 +1,17 @@
+<div class="request-section">
+  <h2>Active Requests</h2>
+  <p class="subtitle">
+    Help your community and earn favors by completing these requests
+  </p>
+
+  <div class="card-grid">
+    @for (favour of favours$ |async; track $index) {
+
+      <app-request-card
+      [favour]="favour"
+      ></app-request-card>
+    }
+  </div>
+
+  <button mat-stroked-button class="load-more">Load More Requests</button>
+</div>

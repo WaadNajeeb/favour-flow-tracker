@@ -1,0 +1,13 @@
+@if (menuItems$ | async; as result) {
+<div>
+  @for (item of result.items; track $index) {
+  <app-favour-require-other-verification-card  [favour]="item"></app-favour-require-other-verification-card >
+  }
+
+
+  <mat-divider style="margin-top: 20px;"></mat-divider>
+  <mat-paginator class="paginator" [length]="result.totalItems" [pageSize]="5"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
+}

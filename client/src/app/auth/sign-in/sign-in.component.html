@@ -1,0 +1,84 @@
+<div class="sign-in-container">
+  <div class="left-side">
+    <div>
+      <div class="logo-container">
+        <img src="../../../assets/icon-just.svg" alt="Favour Flow Logo" class="logo"
+          style="width: 80px;   margin-top: 30px;">
+          <h1 class="title">Favour Flow</h1>
+        </div>
+
+        <div>
+          <p class="subtitle">Keep track of your life's little favours</p>
+          <div class="info">
+            <mat-icon class="info-icon">check_circle</mat-icon>
+            <p class="info-text">Track favours given and received</p>
+          </div>
+          <div class="info">
+            <mat-icon class="info-icon">groups</mat-icon>
+            <p class="info-text">Managed relationship better</p>
+          </div>
+          <div class="info">
+            <mat-icon class="info-icon">area_chart</mat-icon>
+            <p class="info-text">Visualise your favour balance</p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="right-side">
+      <div class="sign-in-form-container">
+        <div style="text-align: center; margin-bottom: 65px;">
+          <h1 class="sign-title">Welcome back</h1>
+          <p class="sign-subtitle">Sign in to your account to continue</p>
+        </div>
+
+
+        <div>
+          <form [formGroup]="signInForm" class="sign-in-form">
+            <div class="form-fields" style="display: flex;; flex-direction: column; gap: 20px;">
+              <mat-form-field appearance="fill" class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <mat-icon class="auth-icons" matIconPrefix>email</mat-icon>
+                <input matInput [formControl]="signInForm.controls.email" type="email" placeholder="Enter your email">
+                @if (signInForm.get('email')?.hasError('required')) {
+                  <mat-error>
+                    Email is required
+                  </mat-error>
+                }
+                @if (signInForm.get('email')?.hasError('email')) {
+                  <mat-error>
+                    Invalid email address
+                  </mat-error>
+                }
+              </mat-form-field>
+
+              <app-password [control]="signInForm.controls.password"></app-password>
+            </div>
+            <div class="extra-options">
+              <mat-checkbox [formControl]="signInForm.controls.rememberMe" class="remember-me" color="#6366F1">Remember
+              Me</mat-checkbox>
+              <a href="#" mat-button class="forgot-password">Forgot Password?</a>
+            </div>
+             <div class="error-messages">
+              @if(signInForm.hasError('submissionError')){
+                <mat-error >
+                  {{signInForm.getError('submissionError')?.message}}
+                </mat-error>
+              }
+
+            </div>
+            <button mat-raised-button class="sign-btn" (click)="onSubmit()">Sign In</button>
+            <div style="text-align: center;">
+              <p class="sign-up-prompt">Don't have an account? <a href="/sign-up" class="sign-up-link">Sign Up</a></p>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="leaderboard-wrapper">
+   <h2>Community Leaderboard</h2>
+    <p class="subtitle">Our most helpful community members</p>
+  <mat-card class="leaderboard">
+    @for (user of communityLeaderboard$ | async; track user) {
+      <div class="rank"  [ngClass]="'rank-' + user.rank">
+        <div class="info">
+          <div class="number">{{user.rank }}</div>
+          <div class="avatar" aria-label="User Avatar">
+            <img [src]="user.avatar" class="avatar">
+          </div>
+          <div class="user-details">
+            <p class="name">{{ user.firstName + ' ' + user.lastName }}</p>
+            <p class="subtitle">{{ user.rankName }}</p>
+          </div>
+        </div>
+        <div class="score">
+          {{ user.points }} <span>Favors completed</span>
+        </div>
+      </div>
+    }
+  </mat-card>
+</div>

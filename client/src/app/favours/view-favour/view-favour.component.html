@@ -1,0 +1,102 @@
+@if(favour){
+<div class="favour-container">
+  <div class="favour-card">
+    <div class="card-header">
+      <div class="card-header-left">
+        <p class="tag-chip" [ngClass]="favour.priority.toLowerCase()" style="color: #fff;">{{ favour.priority }}</p>
+        <mat-chip>{{favour.favourType}}</mat-chip>
+      </div>
+      <div style="display: flex; align-items:center">
+        <span style="    font-size: 14px;
+    color: #747576;">{{favour.createdAt | date:'short'}}</span>
+      </div>
+    </div>
+
+    <div class="title-header">
+      <h2>{{favour.title}}</h2>
+      <div>
+        <div class="left-side">
+          <img [src]="favour.from?.avatar" class="avatar" />
+
+          <div class="user-details">
+            <p class="name">{{ getUserFullName }}</p>
+            <p class="time">{{ favour.from?.points }} Points</p>
+          </div>
+        </div>
+
+        <div class="in">
+          <h3>Description</h3>
+          <p class="description-text">
+            {{favour.description}}
+          </p>
+        </div>
+         <div class="in">
+          <h3>Rewards</h3>
+          @for (item of favour.rewards; track $index) {
+             <mat-chip>{{item}}</mat-chip>
+          }
+        </div>
+        <div class="details">
+          <div class="due-card">
+            <div class="top">
+              <mat-icon class="detail-icon">event</mat-icon>
+              <span style="font-weight: 500;">Date</span>
+            </div>
+            <p class="card-text">{{favour.requiredBy | date:'EEEE, MMMM d, y'}}</p>
+          </div>
+          <div class="due-card">
+            <div class="top">
+              <mat-icon class="detail-icon">schedule</mat-icon>
+              <span style="font-weight: 500;">Time</span>
+            </div>
+            @if(favour.dueTime){
+            <p class="card-text">{{favour.dueTime}}</p>
+            }@else {
+            <p class="card-text">Not set</p>
+            }
+
+          </div>
+          <div class="due-card">
+            <div class="top">
+              <mat-icon class="detail-icon">hourglass_bottom</mat-icon>
+              <span style="font-weight: 500;">Duration</span>
+            </div>
+            @if((favour.duration && favour.duration > 0)&& favour.durationType){
+            <p class="card-text">{{favour.duration + ' ' + favour.durationType}}</p>
+            }@else {
+            <p class="card-text">Not set</p>
+            }
+
+          </div>
+        </div>
+        <div class="in">
+          <h3>Requirements</h3>
+          <ul>
+            @for (item of favour.requirements; track $index) {
+            <li>{{item}}</li>
+            }
+          </ul>
+        </div>
+        <div class="in">
+          <h3>Additional Notes</h3>
+          <div class="info-box">
+            <mat-icon class="info-icon">info</mat-icon>
+            <p class="info-text">
+              {{favour.additionalNotes}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    @if(favour.status !== 'Completed' && favour.status !== 'RequiresVerify'){
+          <mat-card-actions class="card-b" style="text-align: right;">
+       <button mat-flat-button class="redeem-btn" [routerLink]="['/redeem-favour', favour._id]">
+        <mat-icon>redeem</mat-icon>
+        Redeem Favour</button>
+    </mat-card-actions>
+    }
+
+  </div>
+</div>
+
+}

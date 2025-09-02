@@ -1,0 +1,53 @@
+<div class="redeem-container">
+  <div class="top-card">
+    <div class="header">
+
+
+      <div>
+        <h2>Favour Verification Required</h2>
+        <p class="subtitle">Review redemption details and proof of completion!</p>
+      </div>
+      <mat-icon class="redeem-icon">card_giftcard</mat-icon>
+    </div>
+
+  </div>
+  <div class="card">
+    <!-- Header -->
+
+    <h2>Favour Details:</h2>
+    <div class="favor-card">
+      <div class="favor-header">
+        <img [src]="favour?.claimedBy?.avatar" alt="User" class="user-image" />
+        <div style="display: flex; flex-direction:column; gap:5px">
+          <span style="font-size: 14px;">Favour claimed by:</span>
+          <strong>{{ getUserFullName }}</strong>
+        </div>
+
+        <span class="status">{{ favour?.status }}</span>
+      </div>
+      <div class="favor-footer">
+        <span class="completed-date">Claimed At: {{ favour?.claimedAt | date:'short' }}</span>
+      </div>
+    </div>
+
+
+    <div class="redeem-favour">
+
+
+      <div>
+        <label>Proof Details</label>
+        <p>{{favour?.redeemDetails ?? 'No Details was provided'}}</p>
+      </div>
+
+
+
+    </div>
+     <div class="actions">
+      <button mat-raised-button color="primary" class="redeem-btn" (click)="verify()" >
+        <mat-icon>check_circle</mat-icon>
+        Confirm & Verify
+      </button>
+    </div>
+  </div>
+
+</div>

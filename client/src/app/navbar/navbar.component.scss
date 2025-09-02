@@ -1,0 +1,117 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #4a4a4a;
+
+  .coin {
+    background: linear-gradient(45deg, #5271ff, #d15ed2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.sign-in {
+  background-color: #5aa3ff;
+  color: white;
+  border-radius: 6px;
+}
+
+.gradient-button {
+  background: linear-gradient(to right, #5aa3ff, #d15ed2);
+  color: white;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+
+#sign-btn{
+
+  background: #6366F1 !important;
+  color: #fff ;
+}
+
+
+.active{
+  background: var(--primary-color);
+  color: #fff !important;
+}
+
+.nav-btn{
+  border-radius: 10px;
+}
+
+
+
+/* Menu styling */
+::ng-deep .user-menu .mat-menu-content {
+  padding: 0;
+}
+
+
+
+/* Hide mobile toggle button by default */
+.mobile-toggle {
+  display: none;
+}
+
+/* Hide nav and profile on small screens */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .profile-section-desktop {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+    margin-right: 8px;
+  }
+}
+
+/* Optional sidenav tweaks */
+.mobile-sidenav {
+  width: 240px;
+  border-radius: 0 !important;
+}
+.main-container {
+  width: 100%;
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    height: calc(100vh - 56px);
+  }
+
+}

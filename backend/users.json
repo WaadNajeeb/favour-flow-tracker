@@ -1,0 +1,162 @@
+[
+  {
+    "firstName": "Taylor",
+    "lastName": "Swift",
+    "email": "taylor.swift@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/taylor.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Dwayne",
+    "lastName": "Johnson",
+    "email": "dwayne.johnson@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/dwayne.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Beyoncé",
+    "lastName": "Knowles",
+    "email": "beyonce.knowles@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/beyonce.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Elon",
+    "lastName": "Musk",
+    "email": "elon.musk@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/elon.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Watson",
+    "email": "emma.watson@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/emma.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Chris",
+    "lastName": "Hemsworth",
+    "email": "chris.hemsworth@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/chris.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Sydney",
+    "lastName": "Sweeney",
+    "email": "Sydney.Sweeney@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/Sweeney.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Leonardo",
+    "lastName": "DiCaprio",
+    "email": "leonardo.dicaprio@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/leonardo.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Ana",
+    "lastName": "De Armas",
+    "email": "Ana.DeArmas@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W",
+    "avatar": "https://storage.googleapis.com/favours-flow/Ana.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Keanu",
+    "lastName": "Reeves",
+    "email": "keanu.reeves@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W0",
+    "avatar": "https://storage.googleapis.com/favours-flow/keanu.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Harvey",
+    "lastName": "Specter",
+    "email": "Harvey.Specter@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W1",
+    "avatar": "https://storage.googleapis.com/favours-flow/Harvey.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Ryan",
+    "lastName": "Reynolds",
+    "email": "ryan.reynolds@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W2",
+    "avatar": "https://storage.googleapis.com/favours-flow/ryan.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Rihanna",
+    "lastName": "Fenty",
+    "email": "rihanna.fenty@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W3",
+    "avatar": "https://storage.googleapis.com/favours-flow/rihanna.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Robert",
+    "lastName": "Downey",
+    "email": "robert.downey@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W4",
+    "avatar": "https://storage.googleapis.com/favours-flow/robert.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Gal",
+    "lastName": "Gadot",
+    "email": "gal.gadot@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W5",
+    "avatar": "https://storage.googleapis.com/favours-flow/gal.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Jon",
+    "lastName": "Hamm",
+    "email": "Jon.Hamm@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W6",
+    "avatar": "https://storage.googleapis.com/favours-flow/drake.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Natalie",
+    "lastName": "Portman",
+    "email": "natalie.portman@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W7",
+    "avatar": "https://storage.googleapis.com/favours-flow/natalie.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Christian",
+    "lastName": "Bale",
+    "email": "Christian.Bale@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W8",
+    "avatar": "https://storage.googleapis.com/favours-flow/Christian.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Scarlett",
+    "lastName": "Johansson",
+    "email": "scarlett.johansson@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W9",
+    "avatar": "https://storage.googleapis.com/favours-flow/scarlett.jpg",
+    "points": 0
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Holland",
+    "email": "tom.holland@example.com",
+    "password": "$2b$10$mXLqmGXCCbmTxwsNB4lF6Oe5Xtpq6cfpObjoHgHCI.wRJiKjb4w4W0",
+    "avatar": "https://storage.googleapis.com/favours-flow/tom.jpg",
+    "points": 0
+  }
+]

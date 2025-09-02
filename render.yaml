@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: favour-flow
+    plan: free
+    runtime: node
+    buildCommand: npm run build
+    startCommand: npm start
+    autoDeploy: true

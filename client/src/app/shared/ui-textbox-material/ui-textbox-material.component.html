@@ -1,0 +1,17 @@
+<mat-form-field style="width: 100%;" [appearance]="'outline'" class="passoword-form-field">
+  <mat-label>{{label()}}</mat-label>
+  <input [required]="required()" [type]="'text'" matInput
+    placeholder="{{ placeholder() ?? label()}}" [formControl]="control()"  />
+  @if(icon()){
+    <mat-icon class="auth-icons" matIconPrefix>{{icon()}}</mat-icon>
+  }
+
+  @if (required() && control().hasError('required')) {
+    <mat-error>Please enter a {{label()}}</mat-error>
+  }
+
+  @if (control().hasError('email')) {
+    <mat-error>Please enter correct email format {{label()}}</mat-error>
+  }
+
+</mat-form-field>

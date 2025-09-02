@@ -1,0 +1,21 @@
+<div class="text-field">
+  <label>
+    @if(showLabel()){
+      {{ label() }}
+    }
+
+    @if (isRequired()) {
+    <span class="required">*</span>
+    }
+  </label>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <textarea matInput [formControl]="control()" rows="4" [placeholder]="placeholder()" required></textarea>
+    @if (control().hasError('required')) {
+    <mat-error>
+      {{label()}} is required
+    </mat-error>
+    }
+  </mat-form-field>
+
+</div>

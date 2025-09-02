@@ -1,0 +1,216 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+    max-width: 100%;
+
+  flex-direction: column;
+}
+
+h4 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  color: #000;
+  margin-block-end:0.5rem;
+}
+
+
+.subtitle {
+  color: #555;
+  margin-bottom: 1.5rem;
+  margin-block-start: 0;
+}
+
+.back-btn {
+  border-radius: 10px;
+  color: #42414f;
+  background: #fff;
+}
+
+
+.favour-card{
+  background: #fff;
+  padding: 40px;
+  border: 1px solid #c9c9c9;
+  max-width: 100%;
+}
+.example-wrap {
+        display: flex;
+        justify-content: center;
+      }
+.submit-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 10px;
+}
+
+
+mat-button-toggle-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+mat-button-toggle {
+  flex: 1; /* makes them equal width */
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 8px !important;
+  gap: 20px;
+}
+
+.section-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 10px !important;
+
+
+}
+.radio-buttons{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.actions{
+  margin-top: 20px;
+}
+
+
+.radio-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.radio-buttons input[type="radio"] {
+  display: none; /* hide the actual radio */
+}
+
+.radio-buttons label {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: #635bff; /* purple background */
+  color: #fff;
+  border-color: #635bff;
+}
+
+.radio-buttons label:hover {
+  border-color: #888;
+}
+
+
+
+.radio-button-group{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.radio-buttons-2{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.radio-buttons-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.radio-buttons-2 input[type="radio"] {
+  display: none; /* hide the actual radio */
+}
+
+.radio-buttons-2 label {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.radio-buttons-2 input[type="radio"]:checked + label {
+  background-color: #635bff; /* purple background */
+  color: #fff;
+  border-color: #635bff;
+}
+
+.radio-buttons-2 label:hover {
+  border-color: #888;
+}
+.toggle-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f9fafb; /* light gray background */
+  border: 1px solid #e5e7eb; /* subtle border */
+  margin-bottom: 10px;
+}
+
+.toggle-text .title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.toggle-text .subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #635bff !important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #fff !important; /* white knob */
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-ripple-element {
+  background-color: rgba(99, 91, 255, 0.3) !important; /* ripple effect */
+}
+::ng-deep .mdc-switch__track::after {
+  background-color: #635bff !important;;
+}
+
+.date-time{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+
+}
+
+@media screen and (max-width: 768px) {
+  .date-time {
+    grid-template-columns: 1fr;
+  }
+  .radio-buttons-2{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

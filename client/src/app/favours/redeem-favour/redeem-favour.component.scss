@@ -1,0 +1,176 @@
+.redeem-container{
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-direction: column;
+
+}
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 1rem auto;
+}
+.top-card{
+  width: 80%;
+
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  padding: 20px 40px;
+}
+
+.subtitle {
+  margin: 0.5rem 0 1rem 0;
+  color: #fff;
+}
+.redeem-icon{
+  transform: scale(2);
+}
+.favour-box {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.status {
+  background: #d4f8d4;
+  color: #228b22;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin-left: 5px;
+}
+
+blockquote {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid #ccc;
+  color: #444;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.upload-section {
+  margin: 1.5rem 0;
+}
+
+.upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.upload-box:hover {
+  border-color: #2575fc;
+}
+
+.preview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:20px;
+}
+.preview img {
+  max-width: 500px;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.confirm-section {
+  margin: 1.5rem 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.redeem-btn {
+  background: var(--primary-color) !important;
+  color: #fff !important;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+
+.favor-card {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  background: #fff;
+}
+
+.user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.favor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status {
+  margin-left: auto;
+  padding: 4px 12px;
+  background-color: #e1f7e1;
+  border-radius: 12px;
+  color: #2e7d32;
+}
+
+.favor-text {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.favor-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #657786;
+  font-size: 12px;
+}
+
+.completed-date {
+  color: #1da1f2;
+}
+
+
+@media screen and (max-width: 768px) {
+  .redeem-container {
+    padding: 20px;
+  }
+  .card, .top-card{
+    width: 100%;
+  }
+}

@@ -1,0 +1,153 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #4a4a4a;
+
+  .coin {
+    background: linear-gradient(45deg, #5271ff, #d15ed2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.sign-in {
+  background-color: #5aa3ff;
+  color: white;
+  border-radius: 6px;
+}
+
+.gradient-button {
+  background: linear-gradient(to right, #5aa3ff, #d15ed2);
+  color: white;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+
+
+#sign-btn{
+
+  background: var(--primary-color);
+  color: #fff;
+   border-radius: 10px;
+}
+
+
+.active{
+  background: var(--primary-color);
+  color: #fff !important;
+}
+
+.nav-btn{
+  border-radius: 10px;
+}
+
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+
+  .notification-icon {
+    position: relative;
+    mat-icon {
+      font-size: 24px;
+      color: #6b7280;
+    }
+  }
+
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar-img,
+  .avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-placeholder mat-icon {
+    color: #9ca3af;
+    font-size: 20px;
+  }
+}
+
+/* Menu styling */
+::ng-deep .user-menu .mat-menu-content {
+  padding: 0;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+}
+
+.menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu-username {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+/* Hide mobile toggle button by default */
+.mobile-toggle {
+  display: none;
+}
+/* Optional sidenav tweaks */
+.mobile-sidenav {
+  width: 240px;
+  border-radius: 0 !important;
+}

@@ -1,0 +1,85 @@
+/* task-list.component.scss */
+.favour-container {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+h3 {
+  margin-block-start: 0;
+
+}
+
+p {
+  margin-block-start: 0;
+  color: #4c5565;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status.Pending {
+  background: #fde2e2;
+  color: #b71c1c;
+}
+
+
+.status.Completed {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #4c5565;
+  flex-wrap: wrap;
+}
+
+mat-icon {
+  transform: scale(0.8);
+}
+
+.favour-card {
+  padding: 20px;
+  border: 1px solid #e6e7ed;
+  border-radius: 10px;
+  background: #f9fafa;
+}
+
+
+.meta {
+  display: flex;
+  align-items: center;
+}
+
+.text-meta {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.last-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.view-btn {
+  background: var(--primary-color) !important;
+  color: #fff !important;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+}

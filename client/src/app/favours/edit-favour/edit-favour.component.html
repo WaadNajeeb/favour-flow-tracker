@@ -1,0 +1,119 @@
+<div class="container">
+
+
+  <mat-card class="favour-card" [formGroup]="favourForm">
+    <div
+      style="display: flex; justify-content:space-between; width:100%; align-items:center; margin-top: -40px; margin-bottom:10px">
+      <div >
+        <h4>Edit Favour</h4>
+
+      </div>
+
+
+
+    </div>
+        <div class="user-card">
+        <img [src]="favour.to?.avatar" alt="{{favour.to?.firstName}}" class="avatar" />
+        <div class="user-info">
+          <p class="name">{{ favour.to?.firstName }} {{ favour.to?.lastName }}</p>
+          <p class="email">{{ favour.to?.email }}</p>
+          <span class="status">Currently Selected</span>
+        </div>
+      </div>
+    <app-text-field [control]="favourForm.controls.title" placeholder="Enter a clear title for your favour request"
+      label="Title">
+
+    </app-text-field>
+    <app-text-area [control]="favourForm.controls.description"
+      placeholder="Provide detailed information about what you need help with..." label="Description">
+
+    </app-text-area>
+
+    <div class="radio-button-group">
+      <label class="section-label">Favour Type</label>
+      <div class="radio-buttons">
+        <input type="radio" id="public" value="Public" [formControl]="favourForm.controls.favourType" />
+        <label for="public"><mat-icon>public</mat-icon> Public</label>
+
+        <input type="radio" id="friends" value="Personal" [formControl]="favourForm.controls.favourType" />
+        <label for="friends"><mat-icon>person</mat-icon>Personal </label>
+      </div>
+    </div>
+
+    <div class="toggle-card">
+      <div class="toggle-text">
+        <div class="title">Require Image Proof</div>
+        <div class="subtitle">
+          When enabled, the person completing this favour must provide photo evidence of completion
+        </div>
+      </div>
+      <mat-slide-toggle [formControl]="favourForm.controls.proofRequired"></mat-slide-toggle>
+    </div>
+
+    <div class="radio-button-group">
+      <label class="section-label">Priority</label>
+      <div class="radio-buttons-2">
+        <input type="radio" id="low" value="Low" formControlName="priority" />
+        <label for="low"> Low</label>
+
+        <input type="radio" id="medium" value="Medium" formControlName="priority" />
+        <label for="medium">Medium</label>
+
+        <input type="radio" id="high" value="High" formControlName="priority" />
+        <label for="high"> High</label>
+        <input type="radio" id="urgent" value="Urgent" formControlName="priority" />
+        <label for="urgent"> Urgent</label>
+      </div>
+    </div>
+
+    <app-dropdown [control]="favourForm.controls.rewards" placeholder="Add Reward" label="Reward" [items]="rewards"
+      [isLoading]="false" [allowMultiple]="true" [allowTagging]="true">
+
+    </app-dropdown>
+
+    <div class="date-time">
+      <app-date-picker [control]="favourForm.controls.requiredBy" label="Required By" placeholder="Due Date">
+
+      </app-date-picker>
+      <app-time-picker [control]="favourForm.controls.dueTime" label="Time" placeholder="Due Time">
+
+      </app-time-picker>
+    </div>
+
+
+    <div class="date-time">
+      <app-dropdown [control]="favourForm.controls.durationType" placeholder="Duration Type" label="Duration Type"
+        [items]="durationType" [isLoading]="false" [allowMultiple]="false" [allowTagging]="false"
+        (onDropdownValue)="onDurationSelected($event)">
+
+      </app-dropdown>
+      <app-dropdown [control]="favourForm.controls.duration" placeholder="Duration" label="Duration" [items]="duration"
+        [isLoading]="false" [allowMultiple]="false" [allowTagging]="false">
+
+      </app-dropdown>
+    </div>
+    <!-- Privacy Settings -->
+
+
+    <app-text-area [control]="favourForm.controls.additionalNotes" placeholder="Any additional notes you want to add."
+      label="Additional notes">
+
+    </app-text-area>
+
+    <div class="error-messages">
+      @if(favourForm.hasError('submissionError')){
+      <mat-error>
+        {{favourForm.getError('submissionError')?.message}}
+      </mat-error>
+      }
+
+    </div>
+    <!-- Actions -->
+    <div class="actions" [align]="'end'">
+      <button mat-raised-button color="primary" type="submit" class="submit-btn" (click)="onSubmit()">
+        <mat-icon>rocket_launch</mat-icon>
+        Send Favour Request</button>
+    </div>
+  </mat-card>
+
+</div>

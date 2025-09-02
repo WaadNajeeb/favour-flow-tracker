@@ -1,0 +1,16 @@
+@use "@ng-select/ng-select/themes/material.theme.css";
+@use 'ngx-toastr/toastr';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+  --primary-color: #6366F1;
+}
+
+
+.auth-icons {
+  color: #a0a4af;
+}
+
+

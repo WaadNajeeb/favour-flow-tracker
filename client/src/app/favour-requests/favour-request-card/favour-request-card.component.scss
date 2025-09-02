@@ -1,0 +1,168 @@
+:root {
+  --primary-color: #6366F1;
+  --urgent-color: #f87171;
+  --standard-color: #60a5fa;
+  --easy-color: #34d399;
+  --technical-color: #a78bfa;
+}
+
+.main-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.favour-card {
+
+  padding: 20px;
+
+}
+
+.favour-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.tag.urgent {
+  background: #d32f2f;
+}
+
+.tag.high {
+  background: #f57c00;
+}
+
+.tag.medium {
+  background: #1976d2;
+}
+
+.tag.low {
+  background: #388e3c;
+}
+
+.favour-details {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.chip {
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.time {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.pagination {
+  margin: 20px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.description-text {
+  color: #505058;
+  margin-block-start: 0.8rem;
+  font-size: 14px;
+  margin-block-end: 0.3rem;
+}
+
+h4 {
+  margin-block-end: 0;
+  font-weight: 500;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.posted {
+  color: #505058;
+}
+
+.tag-chip {
+  margin-block-start: 0.5em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-block-end: 0.5em;
+}
+
+.footer {
+  padding: 0;
+}
+.footer-btn{
+  padding: 10px;
+  width: 100%;
+}
+.footer-btn > button {
+  width: 100%;
+   border-radius: 5px !important
+}
+mat-divider{
+  color: #505058;
+
+}

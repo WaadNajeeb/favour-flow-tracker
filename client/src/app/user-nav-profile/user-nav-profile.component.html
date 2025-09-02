@@ -1,0 +1,37 @@
+<div class="profile-section">
+    @if (user$ | async; as user) {
+    <div>
+      <div class="navbar-profile" [matMenuTriggerFor]="userMenu">
+        <div class="profile-info">
+          @if (user.avatar) {
+          <img [src]="user.avatar" class="avatar-img" />
+          }
+          @if (!user.avatar) {
+          <div class="avatar-placeholder">
+            <mat-icon>person</mat-icon>
+          </div>
+          }
+        </div>
+      </div>
+      <mat-menu #userMenu="matMenu" class="user-menu">
+        <div class="menu-header">
+          @if (user.avatar) {
+          <img [src]="user.avatar" class="menu-avatar" />
+          }
+          @if (!user.avatar) {
+          <mat-icon class="menu-avatar">person</mat-icon>
+          }
+          <div class="menu-username">{{ user.firstName }} {{ user.lastName }}</div>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-menu-item><mat-icon>person</mat-icon> Edit Profile</button>
+        <button mat-menu-item><mat-icon>settings</mat-icon> Settings</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="logout()"><mat-icon>power_settings_new</mat-icon> Logout</button>
+      </mat-menu>
+    </div>
+
+    } @else {
+    <button mat-raised-button id="sign-btn" [routerLink]="'/sign-in'">Sign In</button>
+    }
+  </div>

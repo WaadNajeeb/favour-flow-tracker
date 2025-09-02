@@ -1,0 +1,34 @@
+.request-section {
+  background-color: #F9FAFB;
+  text-align: center;
+  padding: 2rem;
+  padding: 80px 80px;
+
+}
+
+h2{
+    font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+   color: #4a4a4a;
+}
+
+
+  .subtitle {
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-grid {
+    display: flex;
+    justify-content: center; /* centers the row */
+    gap: 20px;               /* spacing between cards */
+    padding: 40px 0;
+    flex-wrap: wrap;
+
+  }
+
+  .load-more {
+    font-weight: 500;
+  }

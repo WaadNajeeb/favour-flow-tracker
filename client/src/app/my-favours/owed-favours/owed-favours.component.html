@@ -1,0 +1,13 @@
+@if (menuItems$ | async; as result) {
+<div>
+  @for (item of result.items; track $index) {
+  <app-owed-favour-card [favour]="item"></app-owed-favour-card >
+  }
+
+
+  <mat-divider style="margin-top: 20px;"></mat-divider>
+  <mat-paginator class="paginator" [length]="result.totalItems" [pageSize]="5"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
+}

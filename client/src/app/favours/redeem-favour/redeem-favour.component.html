@@ -1,0 +1,90 @@
+<div class="redeem-container">
+  <div class="top-card">
+    <div class="header">
+
+
+      <div>
+        <h2>Redeem Your Favour</h2>
+        <p class="subtitle">Time to cash in on completed favours!</p>
+      </div>
+      <mat-icon class="redeem-icon">card_giftcard</mat-icon>
+    </div>
+
+  </div>
+  <div class="card" [formGroup]="redeemForm">
+    <!-- Header -->
+
+    <h2>You are redeeming this favour:</h2>
+    <div class="favor-card">
+      <div class="favor-header">
+        <img [src]="favour?.from?.avatar" alt="User" class="user-image" />
+        <div style="display: flex; flex-direction:column; gap:5px">
+          <span style="font-size: 14px;">Favour owed by:</span>
+          <strong>{{ getUserFullName }}</strong>
+        </div>
+
+        <span class="status">{{ favour?.status }}</span>
+      </div>
+      <p class="favor-text">"{{ favour?.description }}"</p>
+      <div class="favor-footer">
+        <span class="completed-date">Created on: {{ favour?.createdAt | date:'short' }}</span>
+      </div>
+    </div>
+
+    <!-- Proof Upload -->
+    <div class="upload-section">
+      <h3 style="display: flex; gap: 5px; align-items: center">
+        <mat-icon>photo_camera</mat-icon>
+        Upload Proof of Completion ({{favour?.proofRequired ? 'Required' : 'Optional'}})
+      </h3>
+      <p>Add an image to show that the favour was completed successfully.</p>
+
+      <!-- Upload box -->
+      <div class="upload-box" (click)="fileInput.click()" *ngIf="!previewUrl">
+        <mat-icon>cloud_upload</mat-icon>
+        <p>Click to upload an image</p>
+        <small>PNG, JPG up to 10MB</small>
+      </div>
+
+      <input type="file" #fileInput (change)="onProfilePictureSelected($event)" accept=".jpg,.jpeg,.png" hidden />
+
+      <!-- Preview -->
+      <div class="preview" *ngIf="previewUrl">
+        <img [src]="previewUrl" alt="Preview" />
+        <span>Proof uploaded successfully</span>
+        <button mat-button color="warn" type="button" style="color: red;" (click)="removeImage()">Remove
+        </button>
+      </div>
+
+      <!-- Error -->
+      @if(redeemForm.controls.photoProof.hasError('required')){
+
+      <mat-error>
+        Proof Image is required
+      </mat-error>
+      }
+      <mat-error *ngIf="uploadError">{{ uploadError }}</mat-error>
+    </div>
+
+    <!-- Confirm Redemption -->
+    <div class="confirm-section">
+      <h3>Confirm Redemption</h3>
+      <p style="    margin-block-end:0">A notification will be sent to Alex Morgan that you have redeemed this favour.
+        You can add an optional message
+        below.</p>
+
+      <app-text-area [control]="redeemForm.controls.message" label="Confirm Redemption" [showLabel]="false">
+
+      </app-text-area>
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <button mat-raised-button color="primary" class="redeem-btn" (click)="redeemFavour()">
+        <mat-icon>check_circle</mat-icon>
+        Confirm & Redeem
+      </button>
+    </div>
+  </div>
+
+</div>

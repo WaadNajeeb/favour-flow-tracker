@@ -1,0 +1,41 @@
+<mat-card class="request-card">
+  <div class="header">
+    <div class="left-side">
+      <img [src]="favour().from?.avatar" class="avatar"/>
+
+      <div class="user-details">
+        <p class="name">{{ getUserFullName }}</p>
+        <p class="time">{{ favour().createdAt }}</p>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <p class="status-chip" [ngClass]="favour().status.toLowerCase()">{{ favour().status }}</p>
+    </div>
+
+  </div>
+
+  <div class="favour-details">
+    <div>
+      <p class="request-title">{{ favour().title }}</p>
+      <p class="request-description">{{ favour().description }}</p>
+    </div>
+
+    <div class="tags">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">
+        <p style="color:#6B7280; margin-right:5px">Rewards:</p>
+        @for (tag of favour().rewards; track tag) {
+            <mat-chip>{{tag}}</mat-chip>
+
+        }
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-flat-button color="primary" class="accept-btn" [routerLink]="['/view-favour', favour()._id]">
+      Accept Request
+    </button>
+  </div>
+
+
+</mat-card>

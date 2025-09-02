@@ -1,0 +1,20 @@
+<div class="text-field">
+  <label>
+    {{ label() }}
+    @if (isRequired()) {
+    <span class="required">*</span>
+    }
+  </label>
+
+    <ng-select class="custom" #select [items]="items || []" [formControl]="control()" [bindLabel]="bindLabel()" [bindValue]="bindValue()" appearance="outline"
+      [multiple]="allowMultiple()" [loading]="isLoading() || false" (change)="onChange($event)"
+      [closeOnSelect]="false" [addTag]="getTagFunction()" [typeahead]="searchChanged()" [clearable]="clearable()" [clearSearchOnAdd]="true" appendTo="body"
+      [placeholder]="placeholder()">
+
+      @if(allowMultiple()){
+        <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+          <input id="item-{{ index }}" type="checkbox" [ngModel]="item$.selected" /> {{ item }}
+        </ng-template>
+      }
+    </ng-select>
+</div>

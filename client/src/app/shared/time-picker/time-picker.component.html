@@ -1,0 +1,16 @@
+<div class="text-field">
+  <label>
+    {{ label() }}
+    @if (isRequired()) {
+    <span class="required">*</span>
+    }
+  </label>
+  <mat-form-field appearance="outline" class="full-width">
+    <input matInput [formControl]="control()" [matTimepicker]="picker" [value]="control().value"
+      (dateChange)="onTimeChange($event)">
+
+    <mat-timepicker-toggle matIconSuffix [for]="picker"></mat-timepicker-toggle>
+    <mat-timepicker #picker></mat-timepicker>
+  </mat-form-field>
+
+</div>

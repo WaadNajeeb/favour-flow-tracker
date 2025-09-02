@@ -1,0 +1,35 @@
+<div class="favour-container">
+  <div class="favour-card">
+    <div class="task-header">
+      <h3>{{ favour().title }}</h3>
+      <span class="status" [ngClass]="favour().status">{{ favour().status }}</span>
+    </div>
+
+    <p>{{ favour().description }}</p>
+
+    <div class="last-row">
+      <div class="task-meta">
+        <div class="meta">
+          <mat-icon class="icon-meta">person</mat-icon>
+          <p class="text-meta">Redeemed By: {{ favour().claimedBy?.firstName + ' ' + favour().claimedBy?.lastName}}</p>
+        </div>
+        <div class="meta">
+          <mat-icon class="icon-meta">event</mat-icon>
+          <p class="text-meta">Due: {{ favour().claimedAt | date:'dd/MM/yyyy' }}</p>
+        </div>
+        <div class="meta">
+          <mat-icon class="icon-meta">card_giftcard</mat-icon>
+          <p class="text-meta">Reward:
+
+            @for (item of favour().rewards; track $index) {
+            {{item}}
+            }
+          </p>
+        </div>
+
+      </div>
+      <button mat-flat-button class="view-btn" [routerLink]="['/view-favour', favour()._id]" >View Favour</button>
+    </div>
+
+  </div>
+</div>

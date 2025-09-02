@@ -1,0 +1,120 @@
+<div class="user-favours-container">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div>
+      <h2>My Favours</h2>
+      <p class="subtitle2">Track what you owe and what others owe you</p>
+    </div>
+    <button mat-flat-button color="primary" class="add-btn" [routerLink]="['/create-favour']" >+ Add New Favor</button>
+  </div>
+
+   <mat-card class="favor-card" >
+      <div class="card">
+        <div class="total">
+          <p class="label">Points</p>
+          <p class="value" style="color: #e8570c;">{{points$ | async}}</p>
+        </div>
+        <div class="icon-wrapper owe">
+          <mat-icon style="color: #e8570c;">arrow_upward</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+  @if (favoursCount$ | async; as counter) {
+  <div class="cards-container">
+    <mat-card class="favor-card" (click)="onTabChangeByName('i-owe')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/i-owe') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Favours I Owe</p>
+          <p class="value owe-colour">{{counter.iOwe}}</p>
+        </div>
+        <div class="icon-wrapper owe">
+          <mat-icon class="owe-colour">arrow_upward</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="favor-card" (click)="onTabChangeByName('owed-to-me')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/owed-to-me') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Favours Owed to Me</p>
+          <p class="value owed-colour">{{counter.iOwed}}</p>
+        </div>
+        <div class="icon-wrapper owed">
+          <mat-icon class="owed-colour">arrow_downward</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card class="favor-card" (click)="onTabChangeByName('completed-for-me')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/completed-for-me') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Favours Completed for Me</p>
+          <p class="value completed-colour">{{counter.completedForMe}}</p>
+        </div>
+        <div class="icon-wrapper completed">
+          <mat-icon class="completed-colour">handshake</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="favor-card" (click)="onTabChangeByName('i-completed')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/i-completed') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Favours I Completed</p>
+          <p class="value i-completed-colour">{{counter.iCompleted}}</p>
+        </div>
+        <div class="icon-wrapper i-completed">
+          <mat-icon class="i-completed-colour">check_circle</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="favor-card" (click)="onTabChangeByName('awaiting-verification')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/awaiting-verification') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Awaiting My Verification</p>
+          <p class="value awaiting-verification-colour">{{counter.favoursRequiresVerify}}</p>
+        </div>
+        <div class="icon-wrapper awaiting-verification">
+          <mat-icon class="awaiting-verification-colour">hourglass_top</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+     <mat-card class="favor-card" (click)="onTabChangeByName('pending-verifications')"
+      [ngClass]="{ selected: isActiveRoute('/my-favours/pending-verifications') }">
+      <div class="card">
+        <div class="total">
+          <p class="label">Pending Verifications</p>
+          <p class="value pending-verifications-colour">{{counter.favoursOtherRequiresVerify}}</p>
+        </div>
+        <div class="icon-wrapper pending-verifications">
+          <mat-icon class="pending-verifications-colour">hourglass_bottom</mat-icon>
+        </div>
+      </div>
+    </mat-card>
+
+
+  </div>
+
+
+  <mat-tab-group class="tab-group" [dynamicHeight]="true" [selectedIndex]="selectedIndex"
+    (selectedIndexChange)="onTabChange($event)">
+    <mat-tab label="I Owe Others ({{ counter.iOwe }})"></mat-tab>
+    <mat-tab label="Others Owe Me ({{ counter.iOwed }})"></mat-tab>
+
+    <mat-tab label="Completed For Me ({{ counter.completedForMe }})"></mat-tab>
+    <mat-tab label="I Completed ({{ counter.iCompleted }})"></mat-tab>
+
+ <mat-tab label="Awaiting My Verification ({{ counter.favoursRequiresVerify }})"></mat-tab>
+    <mat-tab label="Pending Verifications ({{ counter.favoursOtherRequiresVerify }})"></mat-tab>
+
+  </mat-tab-group>
+
+  <router-outlet></router-outlet>
+  }
+</div>

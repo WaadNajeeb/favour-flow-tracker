@@ -1,0 +1,33 @@
+<div class="main-container">
+  <div class="container">
+    <section class="leaderboard">
+      <div class="header">
+        <div>
+          <h2>Public Favour Requests</h2>
+        </div>
+        <button mat-flat-button color="primary" class="add-btn" (click)="goToCreateFavour()">+ Add New
+          Favor</button>
+      </div>
+      <div class="filter">
+        <div [formGroup]="searchForm" style="width: 400px; margin-bottom:20px">
+          <app-ui-textbox-material [autofocus]="true" [control]="control" style="margin-bottom: 20px;" icon="search"
+            label="Search" placeholder="Search...."></app-ui-textbox-material>
+        </div>
+      </div>
+
+    </section>
+
+    @if (menuItems$ | async; as result) {
+    <div>
+      <div class="card-row">
+        @for (item of result.items; track $index) {
+        <app-favour-request-card [favour]="item"></app-favour-request-card>
+        }
+      </div>
+
+      <mat-paginator [length]="result.totalItems" [pageSize]="12" (page)="onPageChange($event)">
+      </mat-paginator>
+    </div>
+    }
+  </div>
+</div>

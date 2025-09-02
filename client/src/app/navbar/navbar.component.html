@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container" >
+
+  <!-- Mobile Sidenav -->
+  <mat-sidenav #sidenav mode="over" class="mobile-sidenav">
+    <div style="height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 20px;">
+     <div class="logo-container" style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <img src="assets/icon-5.svg" alt="FavourFlow Logo" class="logo" />
+        <span class="brand-name">FavourFlow</span>
+    </div>
+    <div style="display: flex;  flex-direction: column; height: 80%;">
+      <a mat-button class="nav-btn" routerLink="/" [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }" (click)="sidenav.close()">Home</a>
+        <a mat-button class="nav-btn" routerLink="/favour-requests" [routerLinkActive]="['active']" (click)="sidenav.close()">Requests</a>
+        <a mat-button class="nav-btn" routerLink="/leaderboard" [routerLinkActive]="['active']" (click)="sidenav.close()">Leaderboard</a>
+        <a mat-button class="nav-btn" routerLink="/my-favours" [routerLinkActive]="['active']" (click)="sidenav.close()">My Favors</a>
+    </div>
+    </div>
+
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content >
+    <!-- Toolbar -->
+    <mat-toolbar  class="navbar">
+      <div class="logo-container">
+        <!-- Hamburger button for mobile -->
+        <button mat-icon-button class="mobile-toggle" (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <img src="assets/icon-5.svg" alt="FavourFlow Logo" class="logo" />
+        <span class="brand-name">FavourFlow</span>
+      </div>
+
+      <span class="spacer"></span>
+
+      <!-- Desktop nav -->
+      <nav class="desktop-nav">
+        <a mat-button class="nav-btn" routerLink="/" [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a mat-button class="nav-btn" routerLink="/favour-requests" [routerLinkActive]="['active']">Requests</a>
+        <a mat-button class="nav-btn" routerLink="/leaderboard" [routerLinkActive]="['active']">Leaderboard</a>
+        <a mat-button class="nav-btn" routerLink="/my-favours" [routerLinkActive]="['active']">My Favors</a>
+      </nav>
+
+      <span class="spacer"></span>
+
+    <app-user-nav-profile></app-user-nav-profile>
+    </mat-toolbar>
+
+    <!-- Main content goes here -->
+
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

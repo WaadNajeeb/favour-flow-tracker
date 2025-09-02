@@ -1,0 +1,49 @@
+<div class="how-it-works">
+
+   <h2>How Favour Flow Works</h2>
+    <p class="subtitle">Simple, fun, and transparent favor tracking for your community</p>
+  <div class="features">
+      @for (feature of features; track feature.title) {
+      <div class="feature-item">
+        <div class="icon-wrapper" [ngStyle]="{ backgroundColor: feature.color }">
+          <mat-icon class="feature-icon">{{ feature.icon }}</mat-icon>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <div style="width: 80%; text-align: center; margin: 0 auto;">
+          <p>{{ feature.description }}</p>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>
+
+<section class="cta-section">
+  <h2 style="color:#fff">Ready to Start Tracking Favors?</h2>
+  <p>Join thousands of users building stronger communities through kindness.</p>
+  <div class="cta-buttons">
+    <button mat-flat-button  class="main-btn" [routerLink]="'/sign-up'">Create Account</button>
+    <button mat-stroked-button  class="secondary-btn">Learn More</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="brand">
+      <div class="logo">
+        <mat-icon>handshake</mat-icon>
+        <span>FavourFlow</span>
+      </div>
+      <p>Connecting communities through acts of kindness.</p>
+    </div>
+
+    @for (group of linkGroups; track group.heading) {
+      <div class="footer-links">
+        <h4>{{ group.heading }}</h4>
+        @for (link of group.links; track link) {
+          <a href="#">{{ link }}</a>
+        }
+      </div>
+    }
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+@if(favour()){
+<div class="main-card">
+  <div class="favour-card">
+    <div class="favour-header">
+      <span class="tag" [ngClass]="favour().priority.toLowerCase()">{{ favour().priority }}</span>
+      <span class="posted">{{ favour().createdAt | appTimeAgo }}</span>
+    </div>
+
+    <h4>{{ favour().title }}</h4>
+    <p class="description-text">{{ favour().description }}</p>
+
+
+    <div class="tags">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">
+        <p style="color:#6B7280; margin-right:5px">Rewards:</p>
+        @for (tag of favour().rewards; track tag) {
+        <mat-chip>{{tag}}</mat-chip>
+
+        }
+      </div>
+    </div>
+    <div class="author">
+      <img [src]="favour().from?.avatar" alt="user" class="avatar" />
+      <span class="username">{{ favour().from?.firstName + ' ' + favour().from?.lastName }}</span>
+    </div>
+  </div>
+  <div class="footer">
+    <mat-divider></mat-divider>
+    <div class="footer-btn">
+      <button class="btn-primary" [routerLink]="['/view-favour', favour()._id]">Redeem This Favour </button>
+    </div>
+
+  </div>
+</div>
+
+}

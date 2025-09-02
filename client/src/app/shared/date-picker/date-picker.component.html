@@ -1,0 +1,18 @@
+<div class="text-field">
+  <label>
+    {{ label() }}
+    @if (isRequired()) {
+    <span class="required">*</span>
+    }
+  </label>
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput [matDatepicker]="picker"  placeholder="dd/mm/yyyy" required [formControl]="control()" [min]="minDate"  >
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (control().hasError('required')) {
+      <mat-error>
+        {{label()}} is required
+      </mat-error>
+      }
+    </mat-form-field>
+</div>
