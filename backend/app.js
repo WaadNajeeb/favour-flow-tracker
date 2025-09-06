@@ -23,7 +23,7 @@ app.use(cookieParser());
 // --- CORS ---
 let allowedOrigins = ['http://localhost:4200']; // always allow localhost for dev
 if (isProduction) {
-  allowedOrigins.push('https://favour-flow.onrender.com'); // your deployed frontend
+  allowedOrigins.push('https://favour-flow-tracker.onrender.com'); // your deployed frontend
 }
 
 app.use(cors({
