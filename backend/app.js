@@ -30,12 +30,16 @@ if (isProduction) {
 app.use(cors({
   origin: function(origin, callback) {
     if (!origin) return callback(null, true); // allow curl, mobile apps
-    if (allowedOrigins.indexOf(origin) === -1) {
-      return callback(new Error('Not allowed by CORS'), false);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'), false); // Reject with error
     }
-    return callback(null, true);
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Explicitly allow methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow common headers
+  optionsSuccessStatus: 200 // Respond 200 to preflight requests
 }));
 
 // --- API routes ---
@@ -43,14 +47,6 @@ app.use("/auth", authRoutes);
 app.use("/favour", favourRoutes);
 app.use("/utils", utilsRoutes);
 app.use("/user-favour", favourUserRoutes);
-
-// --- Serve Angular build in production ---
-if (isProduction) {
-  app.use(express.static(path.join(__dirname, '../client/dist/client')));
-  app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/client/index.html'));
-  });
-}
 
 // --- MongoDB connection ---
 const mongoURI = process.env.MONGO_URI;
