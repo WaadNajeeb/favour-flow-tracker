@@ -22,9 +22,9 @@ app.use(cookieParser());
 
 // --- CORS ---
 let allowedOrigins = ["http://localhost:4200"]; // always allow localhost for dev
-if (isProduction) {
+
   allowedOrigins.push("https://favour-flow-tracker.vercel.app"); // ✅ frontend
-}
+
 
 app.use(
   cors({
