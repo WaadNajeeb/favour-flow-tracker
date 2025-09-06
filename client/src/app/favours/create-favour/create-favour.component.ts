@@ -19,7 +19,6 @@ import { ProgressService } from '../../services/progress.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap, catchError, EMPTY } from 'rxjs';
-import { LoginResponse } from '../../../models/user';
 import { Router } from '@angular/router';
 import { TimePickerComponent } from "../../shared/time-picker/time-picker.component";
 @Component({

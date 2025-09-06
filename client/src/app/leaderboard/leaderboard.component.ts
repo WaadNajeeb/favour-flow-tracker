@@ -11,11 +11,10 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { filter, BehaviorSubject, combineLatest, switchMap, map } from 'rxjs';
 import { MatDivider } from '@angular/material/divider';
-import { TableModule } from 'primeng/table';
 @Component({
   selector: 'app-leaderboard',
   imports: [CommonModule, MatCardModule, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule,
-    NgClass, MatSelectModule, AsyncPipe, MatTableModule, MatPaginatorModule, MatDivider, TableModule],
+    NgClass, MatSelectModule, AsyncPipe, MatTableModule, MatPaginatorModule, MatDivider],
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss',
 

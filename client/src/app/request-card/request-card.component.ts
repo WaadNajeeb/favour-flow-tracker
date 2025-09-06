@@ -1,16 +1,14 @@
-import { ChangeDetectionStrategy, Component, input, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { NgClass } from '@angular/common';
-import { AvatarModule } from 'primeng/avatar';
-import { AvatarGroupModule } from 'primeng/avatargroup';
 import { Favour } from '../services/favour.service';
 import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-request-card',
-  imports: [MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, NgClass, AvatarModule, AvatarGroupModule, RouterLink],
+  imports: [MatCardModule, MatIconModule, MatChipsModule, MatButtonModule, NgClass, RouterLink],
   templateUrl: './request-card.component.html',
   styleUrl: './request-card.component.scss',
 
