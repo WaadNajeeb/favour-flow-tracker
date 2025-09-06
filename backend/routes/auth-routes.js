@@ -6,7 +6,7 @@ const User = require('../models/user');
 const RefreshToken = require('../models/refreshToken');
 const { generateAccessToken, generateRefreshToken } = require('../utils/token');
 const jdenticon = require('jdenticon');
-
+require("dotenv").config();
 
 router.post("/allUsers", async (req, res) => {
   try {
@@ -73,9 +73,12 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
-  passport.authenticate('local', { session: false }, async (err, user, info) => {
+  passport.authenticate("local", { session: false }, async (err, user, info) => {
     if (err) return next(err);
-    if (!user) return res.status(401).json({ success: false, message: info?.message });
+    if (!user)
+      return res
+        .status(401)
+        .json({ success: false, message: info?.message });
 
     const rememberMe = req.body.rememberMe === true;
 
@@ -88,24 +91,29 @@ router.post("/login", (req, res, next) => {
     await RefreshToken.create({
       token: refreshToken,
       user: user._id,
-      expiresAt: new Date(Date.now() + refreshTokenExpiry)
+      expiresAt: new Date(Date.now() + refreshTokenExpiry),
     });
 
-    // Set access token cookie
-    res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      sameSite: 'Lax',
-      secure: process.env.NODE_ENV === 'production',
-      ...(rememberMe ? { maxAge: 15 * 60 * 1000 } : {}) // 15 mins or session cookie
-    });
+    // Cookie options (different for dev vs prod)
+    const isProd = process.env.NODE_ENV === "production";
 
-    // Set refresh token cookie
-    res.cookie('refreshToken', refreshToken, {
+    const accessCookieOptions = {
       httpOnly: true,
-      sameSite: 'Lax',
-      secure: process.env.NODE_ENV === 'production',
-      ...(rememberMe ? { maxAge: refreshTokenExpiry } : {}) // 7 days or session cookie
-    });
+      sameSite: isProd ? "None" : "Lax", // cross-site needs None
+      secure: isProd, // cookies require HTTPS in prod
+      ...(rememberMe ? { maxAge: 15 * 60 * 1000 } : {}), // 15 mins or session cookie
+    };
+
+    const refreshCookieOptions = {
+      httpOnly: true,
+      sameSite: isProd ? "None" : "Lax",
+      secure: isProd,
+      ...(rememberMe ? { maxAge: refreshTokenExpiry } : {}),
+    };
+
+    // Set cookies
+    res.cookie("accessToken", accessToken, accessCookieOptions);
+    res.cookie("refreshToken", refreshToken, refreshCookieOptions);
 
     res.json({
       success: true,
@@ -116,42 +124,50 @@ router.post("/login", (req, res, next) => {
         lastName: user.lastName,
         email: user.email,
         avatar: user.avatar,
-      }
+      },
     });
-
   })(req, res, next);
 });
 
+
 // GET NEW ACCESS TOKEN
-router.get('/token', async (req, res) => {
+router.get("/token", async (req, res) => {
   const refreshToken = req.cookies?.refreshToken;
 
   if (!refreshToken) {
-    return res.status(400).json({ success: false, message: 'No refresh token' });
+    return res.status(400).json({ success: false, message: "No refresh token" });
   }
 
   const storedToken = await RefreshToken.findOne({ token: refreshToken });
 
   if (!storedToken || storedToken.expiresAt < new Date()) {
-    return res.status(403).json({ success: false, message: 'Invalid or expired refresh token' });
+    return res
+      .status(403)
+      .json({ success: false, message: "Invalid or expired refresh token" });
   }
 
   try {
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
     const accessToken = generateAccessToken({ _id: decoded.id }); // Consistent payload
 
-    res.cookie('accessToken', accessToken, {
-      httpOnly: true,
-      sameSite: 'Lax',
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: 15 * 60 * 1000,
-    });
+    const isProd = process.env.NODE_ENV === "production";
 
-    res.json({ success: true, message: 'New access token generated' });
+    // Cookie options
+    const accessCookieOptions = {
+      httpOnly: true,
+      sameSite: isProd ? "None" : "Lax", // ✅ None for cross-site
+      secure: isProd, // ✅ require HTTPS in production
+      maxAge: 15 * 60 * 1000, // 15 mins
+    };
+
+    res.cookie("accessToken", accessToken, accessCookieOptions);
+
+    res.json({ success: true, message: "New access token generated" });
   } catch (err) {
-    res.status(403).json({ success: false, message: 'Invalid refresh token' });
+    res.status(403).json({ success: false, message: "Invalid refresh token" });
   }
 });
+
 // GET CURRENT USER
 router.get('/current_user', passport.authenticate('jwt', { session: false }), async (req, res) => {
   try {
