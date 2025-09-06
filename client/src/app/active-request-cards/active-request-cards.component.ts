@@ -1,15 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RequestCardComponent } from "../request-card/request-card.component";
 import { MatCardModule } from '@angular/material/card';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { AvatarModule } from 'primeng/avatar';
-import { AvatarGroupModule } from 'primeng/avatargroup';
 import { FavourService } from '../services/favour.service';
 import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-active-request-cards',
-  imports: [RequestCardComponent, MatCardModule, MatIconModule, MatButtonModule, AvatarModule,AvatarGroupModule, AsyncPipe],
+  imports: [RequestCardComponent, MatCardModule, MatIconModule, MatButtonModule, AsyncPipe],
   templateUrl: './active-request-cards.component.html',
   styleUrl: './active-request-cards.component.scss',
 

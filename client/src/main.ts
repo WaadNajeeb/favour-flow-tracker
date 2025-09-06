@@ -5,8 +5,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { withInterceptorsFromDi, provideHttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
-import { providePrimeNG } from 'primeng/config';
-import Aura from '@primeuix/themes/aura';
+import { providePrimeNG } from 'primeng/config'
 import { AuthInterceptor } from './app/interceptors/auth.interceptor';
 import { provideToastr } from 'ngx-toastr';
 import { ROUTES } from './app/AppRoutes';
@@ -27,11 +26,6 @@ bootstrapApplication(AppComponent, {
       closeButton: true,
       positionClass: 'toast-bottom-center'
     }),
-    providePrimeNG({
-      theme: {
-        preset: Aura
-      }
-    })
 
   ]
 })

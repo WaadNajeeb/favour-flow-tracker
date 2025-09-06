@@ -25,7 +25,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 @Component({
   selector: 'app-favour-requests',
   imports: [CommonModule, MatCardModule, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule,
-    MatSelectModule, AsyncPipe, MatTableModule, MatPaginatorModule, TableModule, MatButtonModule, FavourRequestCardComponent, RouterLink,
+    MatSelectModule, AsyncPipe, MatPaginatorModule, TableModule, MatButtonModule, FavourRequestCardComponent, RouterLink,
     MatFormFieldModule, ReactiveFormsModule, FormsModule, MatInputModule, UiTextboxMaterialComponent],
   templateUrl: './favour-requests.component.html',
   styleUrl: './favour-requests.component.scss'

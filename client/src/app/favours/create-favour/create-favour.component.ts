@@ -14,7 +14,6 @@ import { FavourService, Result } from '../../services/favour.service';
 import { AsyncPipe } from '@angular/common';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MessageService } from 'primeng/api';
 import { NotificationService } from '../../services/notification.service';
 import { ProgressService } from '../../services/progress.service';
 import { HttpErrorResponse } from '@angular/common/http';
