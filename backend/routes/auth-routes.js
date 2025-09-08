@@ -195,16 +195,28 @@ router.get('/isSigned', (req, res) => {
 });
 
 // LOGOUT
-router.post('/logout', async (req, res) => {
+router.post("/logout", async (req, res) => {
   const refreshToken = req.cookies?.refreshToken;
+
   if (refreshToken) {
     await RefreshToken.deleteOne({ token: refreshToken });
   }
 
-  res.clearCookie('accessToken');
-  res.clearCookie('refreshToken');
+  const isProd = process.env.NODE_ENV === "production";
+
+  const cookieOptions = {
+    httpOnly: true,
+    sameSite: isProd ? "None" : "Lax",
+    secure: isProd,
+  };
+
+  // Clear both cookies
+  res.clearCookie("accessToken", cookieOptions);
+  res.clearCookie("refreshToken", cookieOptions);
+
   res.json({ success: true, message: "Logged out successfully" });
 });
+
 
 router.post('/fix-usernames', async (req, res) => {
   try {
